@@ -17,7 +17,10 @@ const Accordion: FC<Props> = ({ title, content, completed }) => {
   return (
     <div className="bg-[#F5F7F9] p-6 rounded-[20px] my-6">
       {/* Head */}
-      <div className="flex items-center justify-between cursor-pointer">
+      <div
+        className="flex items-center justify-between cursor-pointer"
+        onClick={() => setIsOpen(!isOpen)}
+      >
         <div className="flex items-start gap-4">
           {completed ? (
             <div className="bg-[#C6CFDC] w-[24px] h-[24px] opacity-50 rounded-[7px] flex items-center justify-center">
@@ -40,7 +43,6 @@ const Accordion: FC<Props> = ({ title, content, completed }) => {
                 ? "text-[#3F3D56]"
                 : "text-[#8D9CB8]"
             } font-urbanist font-semibold ${checked ? "line-through" : ""}`}
-            onClick={() => setIsOpen(!isOpen)}
           >
             {" "}
             {title}{" "}

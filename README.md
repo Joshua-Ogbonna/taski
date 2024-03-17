@@ -1,35 +1,51 @@
-# Next.js + Jest
+# Taski
 
-This example shows how to configure Jest to work with Next.js.
+This project is built using Nextjs, TailwindCSS for styling, Jest and RTL for testing
 
-This includes Next.js' built-in support for Global CSS, CSS Modules and TypeScript. This example also shows how to use Jest with the App Router and React Server Components.
-
-> **Note:** Since tests can be co-located alongside other files inside the App Router, we have placed those tests in `app/` to demonstrate this behavior (which is different than `pages/`). You can still place all tests in `__tests__` if you prefer.
-
-## Deploy your own
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-jest&project-name=with-jest&repository-name=with-jest)
-
-## How to Use
-
-Quickly get started using [Create Next App](https://github.com/vercel/next.js/tree/canary/packages/create-next-app#readme)!
+## How to run and contribute to this project
 
 In your terminal, run the following command:
 
 ```bash
-npx create-next-app --example with-jest with-jest-app
+git clone https://github.com/Joshua-Ogbonna/taski
 ```
 
 ```bash
-yarn create next-app --example with-jest with-jest-app
+Project URL - https://taski-tau.vercel.app/
 ```
 
 ```bash
-pnpm create next-app --example with-jest with-jest-app
+run npm install to install package dependencies
 ```
+
+Create your branch directly from the main branch.
 
 ## Running Tests
 
 ```bash
 npm test
 ```
+
+# Running Test
+To create a test in this project, we structured it so every component can be tested independently and efficiently.
+
+- For http mock tests, follow the procedure used in handlers to create your mock endpoints.
+- The lib folder contains request handlers for API requests
+- Test should be done at component and page level. This is to ensure code quality, maintainability, and separation of concerns
+
+# State Management
+Due to the relatively small nature of the project, we are making use of context API to handle state efficiently.
+Currently, there's just one context. 
+For creating your own context, follow the guideline in AppContext.tsx which include 
+- creating context, 
+- provider levels and 
+- creating the context hook.
+This is to ensure readability and maintainability.
+
+# Styling
+This project uses tailwind css.
+
+# Component creation
+Creating your own component, it is best advised you group them based on the usage.
+- Page level components should be associated with the page name (e.g AboutComponents)
+- Components used across other pages and components should be under the shared component structure
